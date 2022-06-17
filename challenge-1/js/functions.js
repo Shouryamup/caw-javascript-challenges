@@ -18,7 +18,7 @@ const timerupdate = () => {
             timerStart = 0;
             startButton.textContent ='start';
             document.querySelector(".ring").classList.add("ending");
-                alert(" TIMER ENDED!!!");
+                setTimeout(()=>alert(" TIMER ENDED!!!"),0);
           }
 }
 
