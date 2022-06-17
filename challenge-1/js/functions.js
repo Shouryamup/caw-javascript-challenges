@@ -1,11 +1,9 @@
 
 import {min,sec,timerEnd,startButton} from "./index.js";
-
 let secLeft=0, 
     minLeft=0,
     timerStart=0,
     timerOn=null;
- 
 // timer update updates the value in the input field for every second
 const timerupdate = () => {
     timerStart++;
@@ -44,6 +42,4 @@ const make_timerOnNull = ()=>{
 const make_timerStart_startover = ()=>{
     timerStart=0;
 }
-
-
 export {timerupdate,starttimer,timerOn,make_timerOnNull,make_timerStart_startover};

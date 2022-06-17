@@ -38,8 +38,7 @@ startButton.addEventListener("click",function togglestart(){
             };
     
         };
-})
-    
+})   
 settingButton.addEventListener("click",function togglesetting(){
     //allow setting to only work if timer is not in progress
     if(!timerOn){
@@ -55,6 +54,4 @@ settingButton.addEventListener("click",function togglesetting(){
      //function to make timerstart zero
      make_timerStart_startover();}
 })
-
-
 export{min,sec,timerEnd,startButton};
