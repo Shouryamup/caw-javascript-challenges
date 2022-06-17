@@ -42,4 +42,15 @@ const make_timerOnNull = ()=>{
 const make_timerStart_startover = ()=>{
     timerStart=0;
 }
-export {timerupdate,starttimer,timerOn,make_timerOnNull,make_timerStart_startover};
+
+
+const checkendcases =()=>{
+    return (parseInt(min.value) >= 60 || parseInt(sec.value) >= 60 )
+}
+
+const zerovalues=()=>{
+return (parseInt(min.value) === 0 && parseInt(sec.value) === 0)
+}
+
+
+export {timerupdate,starttimer,timerOn,make_timerOnNull,make_timerStart_startover,checkendcases,zerovalues};

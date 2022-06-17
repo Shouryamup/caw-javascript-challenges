@@ -1,4 +1,4 @@
-import { timerupdate ,starttimer,timerOn,make_timerOnNull,make_timerStart_startover} from "./functions.js";
+import { timerupdate ,starttimer,timerOn,make_timerOnNull,make_timerStart_startover,checkendcases,zerovalues} from "./functions.js";
 //xonstant variable initialisation
 const startButton = document.querySelector(".start");
 const settingButton = document.querySelector(".settings");
@@ -22,10 +22,10 @@ startButton.addEventListener("click",function togglestart(){
             starttimer();
         }
         else{
-           if(parseInt(min.value) >= 60 || parseInt(sec.value) >= 60 ){
+           if(checkendcases()){
             alert("Enter correct value");
            }
-            else if (!(parseInt(min.value) === 0 && parseInt(sec.value) === 0)) {
+            else if (!(zerovalues())) {
                 //changing text of the button to stop
                 startButton.textContent ='stop';
                 //remove ending class from the ring to change the color back to green  
@@ -34,7 +34,7 @@ startButton.addEventListener("click",function togglestart(){
             }
             else{
                 //alert if no value is enetered in the timer
-                alert("Enter Time Value in the Timer!");
+                alert("Enter Time in the Timer!");
             };
     
         };
