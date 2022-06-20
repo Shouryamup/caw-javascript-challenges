@@ -1,5 +1,5 @@
 
-import {min,sec,timerEnd,startButton} from "./index.js";
+import{min,sec,timerEnd,startButton} from "./query.js"
 let secLeft=0, 
     minLeft=0,
     timerStart=0,

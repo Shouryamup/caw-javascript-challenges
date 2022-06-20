@@ -1,12 +1,7 @@
 import { timerupdate ,starttimer,timerOn,make_timerOnNull,make_timerStart_startover,checkendcases,zerovalues} from "./functions.js";
-//xonstant variable initialisation
-const startButton = document.querySelector(".start");
-const settingButton = document.querySelector(".settings");
-//Variable initialisation
-let min = document.querySelector(".minutes input"),
-    sec = document.querySelector(".seconds input"),
-    timerEnd=parseInt(min.value) * 60 + parseInt(sec.value),
-    togglesettings=false;
+import{min,sec,timerEnd,startButton,totalTime,settingButton} from "./query.js"
+
+let togglesettings=false;
 // creating event for click on start button
 startButton.addEventListener("click",function togglestart(){
         togglesettings=false;
@@ -14,7 +9,7 @@ startButton.addEventListener("click",function togglestart(){
         min.disabled=true;
         sec.disabled=true;
         // calculating total value of time according the values in input field of minutes and second
-        timerEnd=parseInt(min.value) * 60 + parseInt(sec.value)
+        totalTime();
         if(startButton.textContent ==='stop'){
             //changing text of the button to start
             startButton.textContent ='start';
@@ -44,6 +39,7 @@ settingButton.addEventListener("click",function togglesetting(){
     if(!timerOn){
     //allow user to edit values in the input field and fetch the values
      togglesettings=true;
+     console.log(min.disabled);
      min.disabled=false;
      sec.disabled=false;
      min.value= document.querySelector(".minutes input").value;
@@ -54,4 +50,3 @@ settingButton.addEventListener("click",function togglesetting(){
      //function to make timerstart zero
      make_timerStart_startover();}
 })
-export{min,sec,timerEnd,startButton};
