@@ -42,7 +42,6 @@ settingButton.addEventListener("click",function togglesetting(){
     if(!timerOn){
     //allow user to edit values in the input field and fetch the values
      togglesettings=true;
-     console.log(min.disabled);
      min.disabled=false;
      sec.disabled=false;
      min.value= document.querySelector(".minutes input").value;

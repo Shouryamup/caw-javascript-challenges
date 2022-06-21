@@ -52,9 +52,9 @@ const zerovalues=()=>{
 return (parseInt(min.value) === 0 && parseInt(sec.value) === 0)
 }
 const ifInteger=(mins,secs)=>{
-    minute = Number(min);
-	second = Number(secs);
-	if (!Number.isInteger(min) || !Number.isInteger(second)) return false;
+    let minutes = Number(mins);
+	let seconds = Number(secs);
+	if ((Number.isInteger(minutes)) && (Number.isInteger(seconds))) return true;
     }
 
 export {timerupdate,starttimer,timerOn,make_timerOnNull,make_timerStart_startover,checkendcases,ifInteger,zerovalues};
