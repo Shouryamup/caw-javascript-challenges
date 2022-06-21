@@ -1,4 +1,4 @@
-import { timerupdate ,starttimer,timerOn,make_timerOnNull,make_timerStart_startover,checkendcases,zerovalues} from "./functions.js";
+import { timerupdate ,starttimer,timerOn,make_timerOnNull,make_timerStart_startover,checkendcases,ifInteger,zerovalues} from "./functions.js";
 import{min,sec,timerEnd,startButton,totalTime,settingButton} from "./query.js"
 
 let togglesettings=false;
@@ -17,7 +17,10 @@ startButton.addEventListener("click",function togglestart(){
             starttimer();
         }
         else{
-           if(checkendcases()){
+            if(!ifInteger(min.value,sec.value)){
+                alert("enter correct number");
+            }
+            else if(checkendcases()){
             alert("Enter correct value");
            }
             else if (!(zerovalues())) {
@@ -28,7 +31,7 @@ startButton.addEventListener("click",function togglestart(){
                 starttimer();
             }
             else{
-                //alert if no value is enetered in the timer
+                //alert if no value is entered in the timer
                 alert("Enter Time in the Timer!");
             };
     

@@ -51,6 +51,10 @@ const checkendcases =()=>{
 const zerovalues=()=>{
 return (parseInt(min.value) === 0 && parseInt(sec.value) === 0)
 }
+const ifInteger=(mins,secs)=>{
+    minute = Number(min);
+	second = Number(secs);
+	if (!Number.isInteger(min) || !Number.isInteger(second)) return false;
+    }
 
-
-export {timerupdate,starttimer,timerOn,make_timerOnNull,make_timerStart_startover,checkendcases,zerovalues};
+export {timerupdate,starttimer,timerOn,make_timerOnNull,make_timerStart_startover,checkendcases,ifInteger,zerovalues};
