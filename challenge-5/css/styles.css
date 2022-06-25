@@ -59,14 +59,14 @@ label {
 }
 
 input[type="checkbox"] + span {
-  background: url('./images/checkbox--unchecked.svg') left top no-repeat;
+  background: url('../images/checkbox--unchecked.svg') left top no-repeat;
   background-size: 20px 20px;
   min-height: 20px;
   padding-left: 30px;
 }
 
 input[type="checkbox"]:checked + span {
-  background-image: url('images/checkbox--checked.svg');
+  background-image: url('../images/checkbox--checked.svg');
   text-decoration: line-through;
   color: #C9CDD1;
 }
