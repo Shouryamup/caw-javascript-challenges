@@ -1,0 +1,38 @@
+{
+  "name": "caw-javascript-challenges",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shouryamup/caw-javascript-challenges.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shouryamup/caw-javascript-challenges/issues"
+  },
+  "homepage": "https://github.com/Shouryamup/caw-javascript-challenges#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "eslint": "^8.18.0",
+    "eslint-plugin-react": "^7.30.1",
+    "htmlhint": "^1.1.4",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "2.7.1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --cache --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.html": "htmlhint"
+  }
+}
