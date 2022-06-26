@@ -3,9 +3,8 @@ on:
   push:
     branches:
       - main
-
 jobs:
-  deploy: s3-deployment
+  s3-deployment: 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
