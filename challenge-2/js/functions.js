@@ -66,10 +66,10 @@ const addItemsToCart = (index) => {
 
     let listItem = document.createElement("li");
     listItem.append(
-      createPlate(index),
-      createContent(index),
-      createQuantityWrapper(index),
-      createSubtotal(index) //increment item count
+      createPlateDiv(index),
+      createContentDiv(index),
+      createQuantityWrapperDiv(index),
+      createSubtotalDiv(index) //increment item count
     );
     cartSummary.appendChild(listItem);
     updateTotalPrice();
@@ -86,7 +86,7 @@ const createElement = (elementType, elementClass, elementText) => {
     return element;
 };
 
-  const createPlate = (index) => {
+  const createPlateDiv = (index) => {
     const plate = document.createElement('div');
     plate.classList.add('plate');
 
@@ -104,7 +104,7 @@ const createElement = (elementType, elementClass, elementText) => {
     return plate;
 };
 
-const createContent = (index) => {
+const createContentDiv = (index) => {
     const content = document.createElement('div');
     content.classList.add('content');
 
@@ -119,7 +119,7 @@ const createContent = (index) => {
 };
 
 
-const createQuantityWrapper = (index) => {
+const createQuantityWrapperDiv = (index) => {
     const quantityWrapper = document.createElement('div');
     quantityWrapper.classList.add('quantity__wrapper');
 
@@ -150,7 +150,7 @@ const createQuantityWrapper = (index) => {
     return quantityWrapper;
 };
 
-const createSubtotal = (index) => {
+const createSubtotalDiv = (index) => {
 	let subtotalValue=(menuItems[index].count)*(menuItems[index].price/100)
     const subtotal = createElement(
         'div',
