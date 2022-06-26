@@ -1,5 +1,8 @@
 name: GitHub Actions automation
-on: [push]
+on: 
+   pull_request:
+      branches:
+          - 'develop'
 jobs:
     LintingAction:
        runs-on: windows-latest
