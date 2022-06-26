@@ -1,0 +1,13 @@
+Timer is displayed on the screen
+When user clicks on start,
+ -The text will change to stop
+ -Timer will start
+When user clicks on stop,
+ -The text will change to start 
+ -Timer will stop/pause
+When user clicks on gear icon /settings
+ - User should be able to change the time i.e. digits
+When timer finishes, 
+ -Color of the ring should change from green to red
+ -Alert message should be passed to the browser
+
