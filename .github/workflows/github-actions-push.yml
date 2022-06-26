@@ -5,7 +5,7 @@ on:
       - main
 jobs:
   s3-deployment: 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Configure AWS credentials
@@ -21,7 +21,7 @@ jobs:
       - name: Deploy
         run: aws s3 sync ./output s3://shourya-js-challenges
   cache-burst:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - uses: jakejarvis/s3-sync-action@master
