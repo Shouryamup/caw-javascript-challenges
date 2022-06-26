@@ -11,12 +11,14 @@ document.addEventListener("keydown", (event) => {
   //handling case sensitive errors
   let clickedKeyVal = event.key.toUpperCase();
   //handling key error
+  if (clickedKeyVal === "TAB") event.preventDefault();
   if (clickedKeyVal === "DELETE") clickedKeyVal = "BACKSPACE";
   //stop jiggling and generating new random key
   if (clickedKeyVal == currentJiggleKey) {
     if (currentJiggleKey == "\\") currentJiggleKey += `\\`;
     toggleJiggleClass(
-      document.querySelector(`[data-key="${currentJiggleKey}"]`)
+      // document.querySelector(`[data-key="${currentJiggleKey}"]`)
+      randomKey
     );
     randomKey = generateRandomKey(allKeys);
     currentJiggleKey = randomKey.getAttribute("data-key");
