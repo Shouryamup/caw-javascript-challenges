@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 12.x
       - name: Deploy
-        run: aws s3 sync ./output s3://shourya-js-challenges
+        run: aws s3 sync ./output/* s3://shourya-js-challenges
   cache-burst-deploy:
     runs-on: ubuntu-latest
     steps:
