@@ -19,21 +19,6 @@ jobs:
         with:
           node-version: 12.x
       - name: Deploy
-        run: aws s3 sync ./output/* s3://shourya-js-challenges
-  cache-burst-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - uses: jakejarvis/s3-sync-action@master
-        with:
-          args: --acl public-read --follow-symlinks --delete --exclude '.git/*' --exclude '.github/*' --exclude '.husky/*' --exclude 'package.json' --exclude 'package-lock.json' --exclude '.prettierrc.js' --exclude '.eslintcache' --exclude '.gitignore' --exclude '.eslintrc.js' --exclude 'node_modules/*' --exclude 'README.md'
-        env:
-          AWS_S3_BUCKET: shourya-js-challenges
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: aws s3 sync ./output s3://shourya-js-challenges
       - name: Cloudfront CacheBurst
         run: aws cloudfront create-invalidation --distribution-id E2V7IXYW3KZ8LS --paths "/*"
-        env:
-          AWS_REGION: "us-east-1"
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
